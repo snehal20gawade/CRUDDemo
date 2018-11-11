@@ -1,6 +1,5 @@
 package com.postgres.cruddemo.controller;
 
-import com.postgres.cruddemo.configuration.HelloWorld;
 import com.postgres.cruddemo.create.Employee;
 import com.postgres.cruddemo.create.Role;
 import com.postgres.cruddemo.repository.EmployeeRepository;
@@ -17,25 +16,12 @@ public class CreateController {
     @Autowired
     private EmployeeRepository employees;
 
-    HelloWorld helloWorld;
-
-    public CreateController(HelloWorld helloWorld) {
-        this.helloWorld = helloWorld;
-    }
-
     @PostMapping("/create")
     public void create(@RequestBody List<Employee> employeeList) {
         //List<Employee> employeeList = getEmployees();
 
         for (Employee employee : employeeList)
             employees.save(employee);
-    }
-
-
-    @GetMapping("/message/{message}")
-    public String getMessage(@PathVariable String message) {
-        helloWorld.setMsg(message);
-        return helloWorld.getMsg();
     }
 
     private List<Employee> getEmployees() {
