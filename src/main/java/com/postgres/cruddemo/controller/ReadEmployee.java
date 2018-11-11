@@ -5,11 +5,8 @@ import com.postgres.cruddemo.create.Employee;
 import com.postgres.cruddemo.create.NameComparator;
 import com.postgres.cruddemo.repository.EmployeeRepository;
 import com.postgres.cruddemo.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
